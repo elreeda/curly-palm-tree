@@ -5,7 +5,7 @@ const styles = {
     border-color: ${props => props.theme.primary};
     background-color: ${props => props.theme.primary};
     color: #FFF;
-    &:focus {
+    &:focus, &:hover {
       background-color: #1443b8;
       border-color: #1443b8;
     }
@@ -13,7 +13,7 @@ const styles = {
   secondary: css`
     border-color: ${props => props.theme.primary};
     color: ${props => props.theme.primary};
-    &:focus {
+    &:focus, &:hover {
       border-color: #1443b8;
     }
   `,

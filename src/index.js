@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
+import { Provider, createClient } from 'urql'
 
 import indexRoutes from './routes'
 import theme from './style/theme'
@@ -24,25 +25,31 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const client = createClient({
+  url: 'http://localhost:4000/'
+})
+
 ReactDOM.render(
   <>
     <GlobalStyle />
-    <ThemeProvider theme={theme}>
-      <Router>
-        <Switch>
-          {indexRoutes.map((prop, key) => {
-            return (
-              <Route
-                exact={prop.exact}
-                path={prop.path}
-                component={prop.component}
-                key={key}
-              />
-            )
-          })}
-        </Switch>
-      </Router>
-    </ThemeProvider>
+    <Provider value={client}>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <Switch>
+            {indexRoutes.map((prop, key) => {
+              return (
+                <Route
+                  exact={prop.exact}
+                  path={prop.path}
+                  component={prop.component}
+                  key={key}
+                />
+              )
+            })}
+          </Switch>
+        </Router>
+      </ThemeProvider>
+    </Provider>
   </>,
   document.getElementById('root')
 )

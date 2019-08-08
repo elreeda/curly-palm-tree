@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 export const StyleBase = styled.div`
   position: relative;
   padding-top: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   height: 42px;
 `
 

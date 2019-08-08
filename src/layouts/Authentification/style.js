@@ -23,23 +23,6 @@ export const Content = styled.div`
     font-size: 28px;
     font-weight: 900;
     color: ${({theme}) => theme.primary};
-    margin-bottom: 70px;
-  }
-  > div {
-    h3 {
-      font-weight: 600;
-      font-size: 20px;
-    }
-    div {
-      font-size: 12px;
-      color: ${({theme}) => theme.label};
-      margin-top: 8px;
-    }
-    form {
-      margin-top: 12px;
-      button {
-        margin-top: 40px;
-      }
-    }
+    margin-bottom: 64px;
   }
 `

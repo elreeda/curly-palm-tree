@@ -1,7 +1,8 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import dashboardRoutes from '../../routes/dashboard'
+import dashboardRoutes from 'routes/dashboard'
+import WithAuth from 'hocs/withAuth'
 
 const Dashboard = () => {
   return (
@@ -27,4 +28,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default WithAuth(Dashboard)

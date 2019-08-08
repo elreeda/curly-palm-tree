@@ -1,14 +1,13 @@
-import SignIn from '../../views/SignIn'
-import SignUp from '../../views/SignUp'
+import LoginView from '../../views/LoginView'
 
 const authRoutes = [
   {
     path: '/login',
-    component: SignIn
+    component: LoginView
   },
   {
     path: '/signup',
-    component: SignUp
+    component: LoginView
   }
 ]
 
