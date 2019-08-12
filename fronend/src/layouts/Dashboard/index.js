@@ -7,7 +7,6 @@ import WithAuth from 'hocs/withAuth'
 const Dashboard = () => {
   return (
     <div>
-      <h2>this yo dashi</h2>
       <Switch>
         {
           dashboardRoutes.map((prop, key) => {

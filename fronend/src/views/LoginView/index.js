@@ -84,4 +84,14 @@ const LoginView = (props) => {
   )
 }
 
-export default LoginView
+// hoc: to redirect users that has auth-tkn already stored in localStorage
+function isAlreadyLoggedIn (Component) {
+  return () => {
+    if (window.localStorage.getItem('auth-tkn')) {
+      return <Redirect to="/dashboard/overview" />
+    }
+    return <Component />
+  }
+}
+
+export default isAlreadyLoggedIn(LoginView)
